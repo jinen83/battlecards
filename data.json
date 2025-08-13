@@ -190,45 +190,5 @@
         ]
       }
     ]
-  },
-  "vs-coding-agents": {
-    "title": "vs Coding Agents",
-    "subtitle": "This is all about differentiating against tools like lovable, bolt, etc.",
-    "tabs": [
-      {
-        "id": "tech-differences",
-        "title": "Tech Differences",
-        "type": "retool",
-        "content": []
-      }
-    ]
-  },
-  "vs-retool": {
-    "title": "vs retool",
-    "subtitle": "New card subtitle...",
-    "tabs": []
-  },
-  "vs-vibecode": {
-    "title": "",
-    "subtitle": "samaj",
-    "tabs": [
-      {
-        "id": "new",
-        "title": "new",
-        "type": "retool",
-        "content": [
-          {
-            "feature": "wife",
-            "dronaHq": "...",
-            "retool": "..."
-          }
-        ]
-      }
-    ]
-  },
-  "vibe": {
-    "title": "vibe",
-    "subtitle": "New card subtitle...",
-    "tabs": []
   }
 }
