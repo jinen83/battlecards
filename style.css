@@ -31,7 +31,7 @@ body {
     background-color: #fef9c3; 
     transition: background-color 0.3s; 
     border-radius: 4px; 
-    padding: 2px; 
+    padding: 2px;
 }
 .in-edit-mode .editable:hover { 
     background-color: #fde047; 
@@ -55,6 +55,24 @@ body {
     position: sticky; 
     top: 0; 
     z-index: 10; 
+    background-color: #f9fafb; /* bg-gray-50 */
+}
+
+/* --- Expandable Rows --- */
+.expandable-row {
+    cursor: pointer;
+}
+.details-row {
+    display: none;
+}
+.details-row.expanded {
+    display: table-row;
+}
+.expand-icon {
+    transition: transform 0.3s ease-in-out;
+}
+.row-expanded .expand-icon {
+    transform: rotate(90deg);
 }
 
 /* --- Mobile Navigation --- */
