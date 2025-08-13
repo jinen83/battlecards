@@ -588,8 +588,10 @@
             passwordInput.addEventListener('keydown', (e) => e.key === 'Enter' && submitPasswordBtn.click());
 
             // --- Initial Load ---
-            loadData();
-            renderApp();
+            loadData().then(() => {
+                renderApp();
+            });
+        });
         });
     </script>
 </body>
