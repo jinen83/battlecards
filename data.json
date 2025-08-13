@@ -7,45 +7,228 @@
         "id": "key-differentiators",
         "title": "Key Differentiators",
         "description": null,
-        "headers": ["Key Pointer", "Their Approach (Pain Point)", "Our Platform (Solution)"],
+        "type": "simple",
         "content": [
           {
-            "row": ["UI", "Rigid, outdated admin UI. Customization is heavy developer work.", "Modern drag-and-drop UI builder. Build polished interfaces in minutes."],
-            "details": [
-              "The default Django admin is functional but not user-friendly for business teams.",
-              "Achieving a modern look and feel requires overriding templates and writing significant CSS, which ties up expensive developer resources."
-            ]
+            "pointer": "UI",
+            "painPoint": "Rigid, outdated admin UI. Customization is heavy developer work.",
+            "solution": "Modern drag-and-drop UI builder. Build polished interfaces in minutes."
           },
           {
-            "row": ["Data Connectors", "Tied to a **single database**. Connecting to other sources requires custom code.", "**Dozens of pre-built connectors.** Connect to any data source in minutes, no code needed."],
-            "details": [
-              "Django's ORM is designed to work with one primary SQL database.",
-              "To pull data from Salesforce, Stripe, or even a Google Sheet, a developer must write a custom integration, handle authentication, and manage API clients."
-            ]
+            "pointer": "Data Connectors",
+            "painPoint": "Tied to a **single database**. Connecting to APIs or other sources requires custom code.",
+            "solution": "**Dozens of pre-built connectors.** Connect to any data source in minutes, no code needed."
+          },
+          {
+            "pointer": "Components",
+            "painPoint": "No real components, just HTML templates. Table features like search/sort require full-stack coding.",
+            "solution": "Rich, pre-built components. Tables have search, sort, and pagination built-in."
+          },
+          {
+            "pointer": "Framework & Package Upkeep",
+            "painPoint": "Constant work to upgrade Django and manage/secure dozens of PyPI packages. Risk of \"dependency hell.\"",
+            "solution": "**Zero upkeep for you.** We manage all frameworks, packages, and dependencies. You get an always-updated platform."
+          },
+          {
+            "pointer": "Hosting & Infra",
+            "painPoint": "**Self-hosted and self-managed.** They are responsible for all servers, databases, security patches, and DevOps.",
+            "solution": "**Fully hosted and managed.** We handle all infrastructure, security, and scalability. Zero DevOps for you."
+          }
+        ]
+      }
+    ]
+  },
+  "php": {
+    "title": "Against: PHP / Laravel",
+    "subtitle": "Highlight the security risks, maintenance burden, and fragmentation of the PHP ecosystem.",
+    "tabs": [
+      {
+        "id": "key-differentiators",
+        "title": "Key Differentiators",
+        "description": null,
+        "type": "simple",
+        "content": [
+          {
+            "pointer": "UI",
+            "painPoint": "Inconsistent UI across different third-party admin packages. All customization requires a PHP developer.",
+            "solution": "**One unified, modern UI builder.** Creates a consistent, high-quality user experience for all tools."
+          },
+          {
+            "pointer": "Data Connectors",
+            "painPoint": "Built for a single database. External connections are manual coding projects.",
+            "solution": "**Language-agnostic connectors.** Stop writing boilerplate API code; start using your data now."
+          },
+          {
+            "pointer": "Components",
+            "painPoint": "Limited by the chosen admin package. Missing components require major custom development.",
+            "solution": "**Vast component library.** Get powerful building blocks like charts, modals, and forms instantly."
+          },
+          {
+            "pointer": "Framework & Package Upkeep",
+            "painPoint": "Requires managing both PHP and framework versions. Heavy reliance on Composer packages that need constant updates.",
+            "solution": "**Zero upkeep for you.** We manage all frameworks, packages, and dependencies. You get an always-updated platform."
+          },
+          {
+            "pointer": "Hosting & Infra",
+            "painPoint": "**High maintenance burden.** They manage complex LAMP/LEMP stacks. Older versions like PHP are **EOL** and a critical security risk.",
+            "solution": "**Always secure, always updated.** We eliminate the risk and overhead of server management and security patching."
+          }
+        ]
+      }
+    ]
+  },
+  "react": {
+    "title": "vs React + Node.js",
+    "subtitle": "Frame their \"total control\" as an extreme and unnecessary cost for internal tools, and sell them on \"Time-to-Value.\"",
+    "tabs": [
+      {
+        "id": "key-differentiators",
+        "title": "Key Differentiators",
+        "description": null,
+        "type": "simple",
+        "content": [
+          {
+            "pointer": "UI",
+            "painPoint": "**Maximum cost for custom UI.** Every element is built from scratch by expensive developers. Very slow to build and change.",
+            "solution": "**Speed and flexibility.** Drag-and-drop a beautiful UI in seconds, with powerful customization when needed."
+          },
+          {
+            "pointer": "Data Connectors",
+            "painPoint": "Every API connection is a manual Node.js coding project, handling auth, errors, and logic from scratch.",
+            "solution": "**Configuration, not code.** Our pre-built connectors handle the boilerplate, saving hundreds of hours."
+          },
+          {
+            "pointer": "Components",
+            "painPoint": "**They build their own components.** They spend weeks of developer time building a table that we give you in one click.",
+            "solution": "**Enterprise-grade component library on Day 1.** We've already built and perfected the tools you need."
+          },
+          {
+            "pointer": "Framework & Package Upkeep",
+            "painPoint": "**Highest upkeep burden.** Constant updates in the JS ecosystem. Managing hundreds of `npm` packages is a major risk and time sink.",
+            "solution": "**Zero upkeep for you.** We manage all frameworks, packages, and dependencies. You get an always-updated platform."
+          },
+          {
+            "pointer": "Hosting & Infra",
+            "painPoint": "**Highest complexity and cost.** Requires managing separate front-end/back-end deployments, CI/CD pipelines, and DevOps staff.",
+            "solution": "**Unified and simple.** A single platform for your UI and logic. We handle all deployments and infrastructure."
           }
         ]
       }
     ]
   },
   "retool": {
-    "title": "Against: Retool",
+    "title": "Vs Retool",
     "subtitle": "Position DronaHQ as the more accessible, scalable, and commercially friendly platform.",
     "tabs": [
       {
         "id": "tech-diff",
         "title": "Technical Differentiators",
         "description": null,
-        "headers": ["Feature", "DronaHQ", "Retool"],
+        "type": "retool",
         "content": [
           {
-            "row": ["Logic Building", "Visual, block-based \"Action Flow\" builder, promoting a no-code/low-code approach.", "Code-centric, primarily relying on JavaScript in event handlers and transformers."],
-            "details": [
-              "DronaHQ's visual action flows allow business users and junior developers to build complex logic without writing code.",
-              "Retool requires proficiency in JavaScript for most non-trivial actions, creating a higher barrier to entry."
-            ]
+            "feature": "Logic Building",
+            "dronaHq": "Visual, block-based \"Action Flow\" builder, promoting a no-code/low-code approach.",
+            "retool": "Code-centric, primarily relying on JavaScript in event handlers and transformers."
+          },
+          {
+            "feature": "Multipage State",
+            "dronaHq": "Seamless and native data sharing between pages, reducing development overhead.",
+            "retool": "Requires manual state management using Temporary State or URL Parameters."
+          },
+          {
+            "feature": "Builder Environment",
+            "dronaHq": "A single, unified builder for creating both web and native mobile applications.",
+            "retool": "Separate builders and environments for web and mobile applications."
+          },
+          {
+            "feature": "UI/UX Components",
+            "dronaHq": "Built-in support for advanced UI like popups, modals, and slide-out drawers.",
+            "retool": "Often requires custom components or CSS/JS workarounds for complex UI patterns."
+          },
+          {
+            "feature": "AI Assistance",
+            "dronaHq": "Integrated AI CoPilot for generating UI, queries, and logic from prompts.",
+            "retool": "AI features focused on query generation and code completion."
+          }
+        ]
+      },
+      {
+        "id": "commercial-diff",
+        "title": "Commercial Differentiators",
+        "description": "DronaHQ's commercial model makes enterprise-grade features accessible on lower-tier plans.",
+        "type": "retool",
+        "content": [
+          {
+            "feature": "Single Sign-On (SSO)",
+            "dronaHq": "Available on the **Business** plan.",
+            "retool": "Generally reserved for the **Enterprise** plan."
+          },
+          {
+            "feature": "Localization",
+            "dronaHq": "Included in **all plans**.",
+            "retool": "Reserved for the **Enterprise** plan."
+          },
+          {
+            "feature": "Advanced Theming",
+            "dronaHq": "Included in **all plans**.",
+            "retool": "Full control is reserved for the **Enterprise** plan."
+          }
+        ]
+      },
+      {
+        "id": "support-diff",
+        "title": "Support & Onboarding",
+        "description": "The approach to developer enablement and support highlights a key strategic difference.",
+        "type": "retool",
+        "content": [
+          {
+            "feature": "Developer Onboarding",
+            "dronaHq": "Accelerates developer productivity with a **\"Ramping up Devs\"** model, offering 24x7 expert assistance to reduce the learning curve.",
+            "retool": "Onboarding is primarily self-serve, relying on documentation, community forums, and traditional tiered support for troubleshooting."
           }
         ]
       }
     ]
+  },
+  "vs-coding-agents": {
+    "title": "vs Coding Agents",
+    "subtitle": "This is all about differentiating against tools like lovable, bolt, etc.",
+    "tabs": [
+      {
+        "id": "tech-differences",
+        "title": "Tech Differences",
+        "type": "retool",
+        "content": []
+      }
+    ]
+  },
+  "vs-retool": {
+    "title": "vs retool",
+    "subtitle": "New card subtitle...",
+    "tabs": []
+  },
+  "vs-vibecode": {
+    "title": "",
+    "subtitle": "samaj",
+    "tabs": [
+      {
+        "id": "new",
+        "title": "new",
+        "type": "retool",
+        "content": [
+          {
+            "feature": "wife",
+            "dronaHq": "...",
+            "retool": "..."
+          }
+        ]
+      }
+    ]
+  },
+  "vibe": {
+    "title": "vibe",
+    "subtitle": "New card subtitle...",
+    "tabs": []
   }
 }
