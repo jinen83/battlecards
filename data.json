@@ -1,4 +1,45 @@
 {
+
+  "lovable": {
+    "title": "Against: Lovable / AI Code Gen Tools",
+    "subtitle": "Expose the Total Cost of Ownership (TCO) of 'free' code by highlighting the hidden work in maintenance, security, and DevOps.",
+    "tabs": [
+      {
+        "id": "key-differentiators",
+        "title": "Key Differentiators",
+        "description": null,
+        "type": "simple",
+        "content": [
+          {
+            "pointer": "Core Function & Setup",
+            "painPoint": "Only generates code snippets. Requires a full dev environment setup before you can even start building the actual application.",
+            "solution": "A complete, ready-to-use platform. Start building and shipping fully functional apps in minutes, not just code snippets."
+          },
+          {
+            "pointer": "Backend & Enterprise Features",
+            "painPoint": "No backend included. Critical features like SSO, RBAC, and database connections must be prompted, coded, and maintained from scratch.",
+            "solution": "SSO, RBAC, and a library of secure data connectors are pre-packaged and ready to configure. Zero backend coding required."
+          },
+          {
+            "pointer": "Deployment & DevOps",
+            "painPoint": "Zero deployment capabilities. You are 100% responsible for setting up servers, CI/CD pipelines, and all ongoing DevOps.",
+            "solution": "One-click publishing. We handle all the servers, scaling, and deployment infrastructure for you. No DevOps needed."
+          },
+          {
+            "pointer": "Code Maintenance & Upkeep",
+            "painPoint": "Total ownership burden. Every line of generated code becomes a long-term liability to debug, update, and manage.",
+            "solution": "Zero code to maintain. The platform handles all underlying framework and package upgrades, eliminating technical debt."
+          },
+          {
+            "pointer": "Security & Compliance",
+            "painPoint": "High risk. AI-generated code must be manually audited for security vulnerabilities and potential open-source license infringements.",
+            "solution": "Secure by design. Uses pre-vetted components and a secure middleware, minimizing risk and compliance overhead."
+          }
+        ]
+      }
+    ]
+  },
+  
   "django": {
     "title": "Against: Django",
     "subtitle": "Expose the hidden costs and limitations of using a heavy backend framework for internal tools.",
