@@ -32,14 +32,14 @@ document.addEventListener('DOMContentLoaded', function () {
     async function loadData() {
         const storedData = localStorage.getItem('battleCardData');
         try {
-            if (storedData) {
+           /* if (storedData) {
                 battleCardData = JSON.parse(storedData);
-            } else {
+            } else {*/
                 const response = await fetch('data.json');
                 if (!response.ok) throw new Error('Network response was not ok');
                 battleCardData = await response.json();
                 saveData(); // Save initial data to local storage
-            }
+            
         } catch (e) {
             console.error("Failed to load or parse data.json", e);
             // In a real app, you'd show an error message to the user.
