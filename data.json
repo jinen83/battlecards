@@ -231,5 +231,67 @@
         ]
       }
     ]
+  },
+  "appsmith": {
+    "title": "Vs Appsmith",
+    "subtitle": "Position DronaHQ as the comprehensive, enterprise-ready platform for both web and native mobile apps.",
+    "tabs": [
+      {
+        "id": "tech-diff",
+        "title": "Technical Differentiators",
+        "description": null,
+        "type": "appsmith",
+        "content": [
+          {
+            "feature": "Platform Focus",
+            "dronaHq": "A single, unified builder for creating both responsive **web and native mobile** applications simultaneously.",
+            "appsmith": "**Web apps only.** Primarily focused on building internal tools and admin panels for desktop browsers."
+          },
+          {
+            "feature": "Logic Building",
+            "dronaHq": "Visual, block-based **\"Action Flow\"** builder that allows for complex, multi-step logic without extensive coding.",
+            "appsmith": "**Code-centric.** Relies heavily on writing JavaScript in queries and event handlers to manage application logic."
+          },
+          {
+            "feature": "UI Components",
+            "dronaHq": "**Over 150+ components**, including advanced controls like document viewers, signature pads, and native mobile elements.",
+            "appsmith": "Provides a solid library of standard web widgets. Lacks advanced or mobile-specific components."
+          },
+          {
+            "feature": "Backend Connectors",
+            "dronaHq": "Exhaustive library including **gRPC, SOAP**, and more ready 3rd party APIs like Stripe and Zendesk.",
+            "appsmith": "Good core support for REST, GraphQL, and major databases. Lacks gRPC and has a smaller library of ready APIs."
+          },
+          {
+            "feature": "AI Assistance",
+            "dronaHq": "Integrated AI CoPilot for generating UI from designs (**Vision AI**), creating queries, and building logic flows from text.",
+            "appsmith": "AI features are primarily focused on generating database queries and code within the editor."
+          }
+        ]
+      },
+      {
+        "id": "commercial-diff",
+        "title": "Commercial & Strategic Differentiators",
+        "description": "Highlighting the differences in business model, support, and enterprise readiness.",
+        "type": "appsmith",
+        "content": [
+          {
+            "feature": "Source Model",
+            "dronaHq": "A **commercial, proprietary platform** offering dedicated enterprise support and a managed environment.",
+            "appsmith": "**Open-source core.** Provides transparency and flexibility, but requires more self-management and relies on community support."
+          },
+          {
+            "feature": "Enterprise Readiness",
+            "dronaHq": "Key features like **SSO and custom domains** are available on more accessible Business plans.",
+            "appsmith": "Many critical enterprise features are gated and reserved for the highest-tier **Enterprise plan**."
+          },
+          {
+            "feature": "Developer Onboarding",
+            "dronaHq": "Offers **hands-on engineering support** and co-building sessions to accelerate developer onboarding.",
+            "appsmith": "Primarily **self-serve and community-driven**, with dedicated support available at the enterprise level."
+          }
+        ]
+      }
+    ]
   }
 }
