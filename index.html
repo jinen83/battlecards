@@ -238,6 +238,14 @@
     }
             function saveData() { localStorage.setItem('battleCardData', JSON.stringify(battleCardData, null, 2)); }
 
+             function parseMarkdown(text = '') {
+                if (typeof text !== 'string') return '';
+                // Converts **bold** to <strong>bold</strong> and preserves line breaks
+                return text
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/\n/g, '<br>');
+            }
+
             // --- HTML Generation ---
             const createDeleteBtn = (path) => `<button class="edit-control text-red-500 hover:text-red-700 ml-2" data-action="delete" data-path="${path}"><ion-icon name="trash-outline"></ion-icon></button>`;
             
@@ -301,7 +309,7 @@
 
             //create card v3
 
-            function generateCardHTML(cardId, cardData) {
+          /*  function generateCardHTML(cardId, cardData) {
                 // Helper to get a clean competitor name for display
                 const getCompetitorName = (title) => {
                     let name = title.replace("Against:", "").replace(/vs/i, "").trim();
@@ -343,6 +351,39 @@
                 }).join('');
 
                 return `<div id="${cardId}" class="content-pane battle-card-content"><div class="flex justify-between items-center"><h2 class="text-2xl md:text-3xl font-bold mb-2 editable" data-path="${cardId}.title">${cardData.title}</h2>${createDeleteBtn(cardId)}</div><p class="text-gray-500 mb-8 editable" data-path="${cardId}.subtitle">${cardData.subtitle}</p><div class="border-b border-gray-200 mb-6"><nav class="sub-tab-nav -mb-px flex flex-wrap space-x-4 sm:space-x-8">${tabsNavHTML}</nav></div>${tabsContentHTML}</div>`;
+            }*/
+
+            //new create table:
+             function generateCardHTML(cardId, cardData) {
+                const getCompetitorName = (title) => {
+                    let name = title.replace("Against:", "").replace(/vs/i, "").trim();
+                    if (name.includes("+")) { name = name.split('+')[0].trim(); }
+                    return name;
+                };
+
+                const tabsNavHTML = cardData.tabs.map((t,i) => `<div class="relative group"><button class="sub-tab-link whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm" data-sub-tab-target="${t.id}">${t.title}</button><div class="absolute top-0 right-0">${createDeleteBtn(`${cardId}.tabs[${i}]`)}</div></div>`).join('') + `<div class="py-4 px-1 edit-control"><button class="text-sm font-medium text-sky-600 hover:text-sky-800" data-action="add-tab" data-path="${cardId}.tabs">+ Add Tab</button></div>`;
+                
+                const tabsContentHTML = cardData.tabs.map((tab, tabIndex) => {
+                    let rowsHTML = '';
+                    let tableHeaderHTML = '';
+                    const competitorName = getCompetitorName(cardData.title);
+                    const competitorKey = cardId;
+
+                    if (tab.type === 'simple') {
+                        tableHeaderHTML = `<tr><th class="px-6 py-3">Key Pointer</th><th class="px-6 py-3">${competitorName}</th><th class="px-6 py-3 bg-sky-50 text-sky-800">DronaHQ</th><th class="w-12"></th></tr>`;
+                        rowsHTML = tab.content.map((p, contentIndex) => `<tr class="border-b group"><td class="px-6 py-4 font-semibold editable" data-path="${cardId}.tabs[${tabIndex}].content[${contentIndex}].pointer">${parseMarkdown(p.pointer)}</td><td class="px-6 py-4 editable" data-path="${cardId}.tabs[${tabIndex}].content[${contentIndex}].painPoint">${parseMarkdown(p.painPoint)}</td><td class="px-6 py-4 bg-sky-50 editable" data-path="${cardId}.tabs[${tabIndex}].content[${contentIndex}].solution">${parseMarkdown(p.solution)}</td><td class="px-2 py-4 w-12 text-center">${createDeleteBtn(`${cardId}.tabs[${tabIndex}].content[${contentIndex}]`)}</td></tr>`).join('');
+                    } else {
+                        tableHeaderHTML = `<tr><th class="px-6 py-3">Feature</th><th class="px-6 py-3 bg-sky-50 text-sky-800">DronaHQ</th><th class="px-6 py-3">${competitorName}</th><th class="w-12"></th></tr>`;
+                        rowsHTML = tab.content.map((c, contentIndex) => {
+                            const competitorData = c[competitorKey] || 'N/A';
+                            return `<tr class="border-b group"><td class="px-6 py-4 font-semibold editable" data-path="${cardId}.tabs[${tabIndex}].content[${contentIndex}].feature">${parseMarkdown(c.feature)}</td><td class="px-6 py-4 bg-sky-50 editable" data-path="${cardId}.tabs[${tabIndex}].content[${contentIndex}].dronaHq">${parseMarkdown(c.dronaHq)}</td><td class="px-6 py-4 editable" data-path="${cardId}.tabs[${tabIndex}].content[${contentIndex}].${competitorKey}">${parseMarkdown(competitorData)}</td><td class="px-2 py-4 w-12 text-center">${createDeleteBtn(`${cardId}.tabs[${tabIndex}].content[${contentIndex}]`)}</td></tr>`;
+                        }).join('');
+                    }
+
+                    return `<div id="${tab.id}" class="content-pane sub-tab-content">${tab.description ? `<p class="text-gray-600 mb-4 editable" data-path="${cardId}.tabs[${tabIndex}].description">${parseMarkdown(tab.description)}</p>` : ''}<div class="table-container overflow-x-auto bg-white rounded-lg shadow"><table class="w-full text-sm text-left"><thead class="text-xs text-gray-700 uppercase bg-gray-50">${tableHeaderHTML}</thead><tbody>${rowsHTML}</tbody></table><div class="p-4 edit-control"><button class="text-sm font-medium text-sky-600 hover:text-sky-800" data-action="add-row" data-path="${cardId}.tabs[${tabIndex}].content" data-type="${tab.type}">+ Add Row</button></div></div></div>`;
+                }).join('');
+
+                return `<div id="${cardId}" class="content-pane battle-card-content"><div class="flex justify-between items-center"><h2 class="text-2xl md:text-3xl font-bold mb-2 editable" data-path="${cardId}.title">${parseMarkdown(cardData.title)}</h2>${createDeleteBtn(cardId)}</div><p class="text-gray-500 mb-8 editable" data-path="${cardId}.subtitle">${parseMarkdown(cardData.subtitle)}</p><div class="border-b border-gray-200 mb-6"><nav class="sub-tab-nav -mb-px flex flex-wrap space-x-4 sm:space-x-8">${tabsNavHTML}</nav></div>${tabsContentHTML}</div>`;
             }
 
             // --- App Logic ---
