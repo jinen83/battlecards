@@ -42,14 +42,19 @@
   
   "django": {
     "title": "Against: Django",
-    "subtitle": "Expose the hidden costs and limitations of using a heavy backend framework for internal tools.",
-    "tabs": [
+    "subtitle": "Not a complete box — Django leaves you coding UI, connectors, and infra. DronaHQ gives you enterprise guardrails and 1-click deploy, making it ~32x faster to ship apps to end-users.",
+  "tabs": [
       {
         "id": "key-differentiators",
         "title": "Key Differentiators",
         "description": null,
         "type": "simple",
         "content": [
+           {
+            "pointer": "Core Function",
+            "painPoint": "A backend **framework** only. Requires you to build custom front-ends, connectors, and hosting from scratch.",
+            "solution": "A complete **development platform**. Provides a unified solution for UI, backend, and deployment out-of-the-box."
+          },
           {
             "pointer": "UI",
             "painPoint": "Rigid, outdated admin UI. Customization is heavy developer work.",
