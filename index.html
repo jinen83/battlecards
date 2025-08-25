@@ -231,7 +231,7 @@
                 battleCardData = await response.json();
                 saveData(); // Save initial data to local storage
             
-        } catch (e) {
+        }} catch (e) {
             console.error("Failed to load or parse data.json", e);
             // In a real app, you'd show an error message to the user.
         }
