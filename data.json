@@ -95,6 +95,11 @@
         "type": "simple",
         "content": [
           {
+            "pointer": "Core Function",
+            "painPoint": "A backend **framework.** You still need to build the entire UI, manage data connections, and handle all hosting infrastructure separately.",
+            "solution": "An **all-in-one platform.** We provide the UI builder, secure connectors, and hosting in a single, unified environment."
+          },
+          {
             "pointer": "UI",
             "painPoint": "Inconsistent UI across different third-party admin packages. All customization requires a PHP developer.",
             "solution": "**One unified, modern UI builder.** Creates a consistent, high-quality user experience for all tools."
@@ -133,6 +138,11 @@
         "description": null,
         "type": "simple",
         "content": [
+           {
+            "pointer": "Core Function",
+            "painPoint": "A collection of **libraries and runtimes,** not a platform. You have to assemble every piece of the puzzle yourself.",
+            "solution": "A **fully integrated platform.** We've already built and connected all the pieces so you can focus on building the app, not the stack."
+          },
           {
             "pointer": "UI",
             "painPoint": "**Maximum cost for custom UI.** Every element is built from scratch by expensive developers. Very slow to build and change.",
