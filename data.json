@@ -240,7 +240,7 @@
         "id": "tech-diff",
         "title": "Technical Differentiators",
         "description": null,
-        "type": "appsmith",
+        "type": "retool",
         "content": [
           {
             "feature": "Platform Focus",
@@ -273,7 +273,7 @@
         "id": "commercial-diff",
         "title": "Commercial & Strategic Differentiators",
         "description": "Highlighting the differences in business model, support, and enterprise readiness.",
-        "type": "appsmith",
+        "type": "retool",
         "content": [
           {
             "feature": "Source Model",
