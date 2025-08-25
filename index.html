@@ -224,9 +224,9 @@
             async function loadData() {
         const storedData = localStorage.getItem('battleCardData');
         try {
-            /*if (storedData) {
+            if (storedData) {
                 battleCardData = JSON.parse(storedData);
-            } else {*/
+            } else {
                 const response = await fetch('data.json');
                 battleCardData = await response.json();
                 saveData(); // Save initial data to local storage
