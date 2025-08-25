@@ -383,7 +383,8 @@
                     return `<div id="${tab.id}" class="content-pane sub-tab-content">${tab.description ? `<p class="text-gray-600 mb-4 editable" data-path="${cardId}.tabs[${tabIndex}].description">${parseMarkdown(tab.description)}</p>` : ''}<div class="table-container overflow-x-auto bg-white rounded-lg shadow"><table class="w-full text-sm text-left"><thead class="text-xs text-gray-700 uppercase bg-gray-50">${tableHeaderHTML}</thead><tbody>${rowsHTML}</tbody></table><div class="p-4 edit-control"><button class="text-sm font-medium text-sky-600 hover:text-sky-800" data-action="add-row" data-path="${cardId}.tabs[${tabIndex}].content" data-type="${tab.type}">+ Add Row</button></div></div></div>`;
                 }).join('');
 
-                return `<div id="${cardId}" class="content-pane battle-card-content"><div class="flex justify-between items-center"><h2 class="text-2xl md:text-3xl font-bold mb-2 editable" data-path="${cardId}.title">${parseMarkdown(cardData.title)}</h2>${createDeleteBtn(cardId)}</div><p class="text-gray-500 mb-8 editable" data-path="${cardId}.subtitle">${parseMarkdown(cardData.subtitle)}</p><div class="border-b border-gray-200 mb-6"><nav class="sub-tab-nav -mb-px flex flex-wrap space-x-4 sm:space-x-8">${tabsNavHTML}</nav></div>${tabsContentHTML}</div>`;
+                return `<div id="${cardId}" class="content-pane battle-card-content"><div class="flex justify-between items-center"><h2 class="text-3xl md:text-4xl font-bold mb-2 editable" data-path="${cardId}.title">${parseMarkdown(cardData.title)}</h2>${createDeleteBtn(cardId)}</div><p class="text-gray-500 mb-8 editable" data-path="${cardId}.subtitle">${parseMarkdown(cardData.subtitle)}</p><div class="border-b border-gray-200 mb-6"><nav class="sub-tab-nav -mb-px flex flex-wrap space-x-4 sm:space-x-8">${tabsNavHTML}</nav></div>${tabsContentHTML}</div>`;
+            
             }
 
             // --- App Logic ---
